@@ -1,0 +1,32 @@
+base_url: https://jsonplaceholder.typicode.com
+endpoints:
+  - path: /users
+    method: GET
+    response_schema:
+      type: array
+      items:
+        type: object
+        properties:
+          id: 
+            type: integer
+          name: 
+            type: string
+  - path: /posts
+    method: POST
+    response_schema:
+      type: object
+      properties:
+        id: 
+          type: integer
+        title: 
+          type: string
+        body: 
+          type: string
+
+test_data:
+  - data: null
+    expected_status: 200
+  - data:
+      title: "foo"
+      body: "bar"
+    expected_status: 201

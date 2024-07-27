@@ -1,0 +1,34 @@
+[
+  {
+    "endpoint": "/users",
+    "method": "GET",
+    "status_code": 200,
+    "expected_status": 201,
+    "pass": false,
+    "schema_valid": true
+  },
+  {
+    "endpoint": "/users",
+    "method": "GET",
+    "status_code": 200,
+    "expected_status": 200,
+    "pass": true,
+    "schema_valid": true
+  },
+  {
+    "endpoint": "/posts",
+    "method": "POST",
+    "status_code": 201,
+    "expected_status": 200,
+    "pass": false,
+    "schema_valid": true
+  },
+  {
+    "endpoint": "/posts",
+    "method": "POST",
+    "status_code": 201,
+    "expected_status": 201,
+    "pass": true,
+    "schema_valid": true
+  }
+]
