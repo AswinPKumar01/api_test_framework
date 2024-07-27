@@ -1,14 +1,16 @@
 import json
+import csv
 from datetime import datetime
+from typing import List, Dict, Any
 
 class Reporter:
     def __init__(self):
-        self.results = []
+        self.results: List[Dict[str, Any]] = []
 
-    def add_results(self, results):
+    def add_results(self, results: List[Dict[str, Any]]):
         self.results.extend(results)
 
-    def generate_report(self):
+    def generate_report(self) -> str:
         total_tests = len(self.results)
         passed_tests = sum(1 for result in self.results if result['pass'])
         failed_tests = total_tests - passed_tests
@@ -24,9 +26,19 @@ class Reporter:
 
         return json.dumps(report, indent=2)
 
-    def save_report(self, filename='report.json'):
+    def save_json_report(self, filename: str = 'report.json'):
         with open(filename, 'w') as f:
             json.dump(self.results, f, indent=2)
+
+    def save_csv_report(self, filename: str = 'report.csv'):
+        if not self.results:
+            return
+
+        keys = self.results[0].keys()
+        with open(filename, 'w', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=keys)
+            writer.writeheader()
+            writer.writerows(self.results)
 
     def print_summary(self):
         total_tests = len(self.results)

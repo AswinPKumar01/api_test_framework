@@ -2,33 +2,37 @@
   {
     "endpoint": "/users",
     "method": "GET",
-    "status_code": 200,
-    "expected_status": 201,
     "pass": false,
-    "schema_valid": true
+    "error": "Request failed"
+  },
+  {
+    "endpoint": "/users",
+    "method": "POST",
+    "pass": false,
+    "error": "Request failed"
+  },
+  {
+    "endpoint": "/users",
+    "method": "POST",
+    "pass": false,
+    "error": "Request failed"
   },
   {
     "endpoint": "/users",
     "method": "GET",
-    "status_code": 200,
-    "expected_status": 200,
-    "pass": true,
-    "schema_valid": true
-  },
-  {
-    "endpoint": "/posts",
-    "method": "POST",
-    "status_code": 201,
-    "expected_status": 200,
     "pass": false,
-    "schema_valid": true
+    "error": "Request failed"
   },
   {
-    "endpoint": "/posts",
+    "endpoint": "/users",
     "method": "POST",
-    "status_code": 201,
-    "expected_status": 201,
-    "pass": true,
-    "schema_valid": true
+    "pass": false,
+    "error": "Request failed"
+  },
+  {
+    "endpoint": "/users",
+    "method": "GET",
+    "pass": false,
+    "error": "Request failed"
   }
 ]

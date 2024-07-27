@@ -1,4 +1,10 @@
-base_url: https://jsonplaceholder.typicode.com
+base_url: https://api.example.com
+headers:
+  User-Agent: "APITestFramework/1.0"
+  Accept: "application/json"
+auth:
+  username: "your_username"
+  password: "your_password"
 endpoints:
   - path: /users
     method: GET
@@ -11,22 +17,25 @@ endpoints:
             type: integer
           name: 
             type: string
-  - path: /posts
+  - path: /users
     method: POST
     response_schema:
       type: object
       properties:
         id: 
           type: integer
-        title: 
-          type: string
-        body: 
+        name: 
           type: string
 
 test_data:
   - data: null
     expected_status: 200
   - data:
-      title: "foo"
-      body: "bar"
+      name: "John Doe"
     expected_status: 201
+    headers:
+      Content-Type: "application/json"
+  - params:
+      page: 1
+      per_page: 10
+    expected_status: 200

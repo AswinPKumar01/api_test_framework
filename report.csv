@@ -1,0 +1,7 @@
+endpoint,method,pass,error
+/users,GET,False,Request failed
+/users,POST,False,Request failed
+/users,POST,False,Request failed
+/users,GET,False,Request failed
+/users,POST,False,Request failed
+/users,GET,False,Request failed
