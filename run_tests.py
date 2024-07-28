@@ -1,9 +1,6 @@
 import argparse
 import logging
-from api_test_framework.config import Config
-from api_test_framework.test_generator import TestGenerator
-from api_test_framework.test_runner import TestRunner
-from api_test_framework.reporter import Reporter
+from api_test_framework import Config, TestRunner, TestGenerator, Reporter
 
 def setup_logging(level):
     logging.basicConfig(level=level, format='%(asctime)s - %(levelname)s - %(message)s')
