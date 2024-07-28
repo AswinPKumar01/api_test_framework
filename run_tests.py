@@ -31,7 +31,8 @@ def main():
     reporter.print_summary()
     reporter.save_json_report()
     reporter.save_csv_report()
-    logging.info("Test execution completed. Reports saved.")
+    reporter.save_html_report()
+    logging.info(f"Test execution completed. Reports saved in {reporter.output_dir}")
 
 if __name__ == '__main__':
     main()

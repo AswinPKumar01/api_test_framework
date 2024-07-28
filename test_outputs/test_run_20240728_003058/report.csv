@@ -1,0 +1,7 @@
+endpoint,method,status_code,expected_status,pass,schema_valid
+/posts,GET,200,200,True,True
+/posts,GET,200,201,False,True
+/posts,POST,201,201,True,True
+/posts,POST,201,200,False,True
+/posts,GET,200,200,True,True
+/posts,POST,201,200,False,True
