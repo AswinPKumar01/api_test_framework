@@ -16,7 +16,8 @@ def main():
                         help='Set the logging level')
     args = parser.parse_args()
 
-    setup_logging(args.log_level)
+    setup_logging(logging.DEBUG)
+
 
     logging.info(f"Loading configuration from {args.config}")
     config = Config(args.config)
